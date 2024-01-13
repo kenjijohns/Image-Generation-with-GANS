@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpolated Images</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <div class="max-w-md p-6 bg-white rounded-md shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Interpolated Images</h1>
+        
+        <!-- Image Display in Flex Row -->
+        <div class="flex flex-row flex-wrap justify-center items-center">
+            {% for img_str in img_list %}
+                <img src="data:image/png;base64,{{ img_str }}" alt="Interpolated Image"
+                     class="m-2 rounded-md shadow-md max-w-full">
+            {% endfor %}
+        </div>
+    </div>
+    <a href="/" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md">Back to Home</a>
+</body>
+</html>

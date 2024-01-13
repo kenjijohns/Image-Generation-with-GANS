@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="max-w-md p-6 bg-white rounded-md shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Image Generator</h1>
+
+        <!-- Form 1: Generate Images -->
+        <form action="/generate" method="post" class="mb-4">
+            <label for="num_faces" class="block text-sm font-medium text-gray-600">Number of Faces:</label>
+            <input type="number" name="num_faces" value="5" min="1" max="10000"
+                   class="mt-1 p-2 border rounded-md w-full">
+            <button type="submit" class="mt-2 bg-blue-500 text-white py-2 px-4 rounded-md">Generate Images</button>
+        </form>
+
+        <!-- Form 2: Interpolate Images -->
+        <form action="/interpolate" method="post" class="mb-4">
+            <label for="num_steps" class="block text-sm font-medium text-gray-600">Number of Steps:</label>
+            <input type="number" name="num_steps" value="10" min="1" max="100"
+                   class="mt-1 p-2 border rounded-md w-full">
+            <button type="submit" class="mt-2 bg-blue-500 text-white py-2 px-4 rounded-md">Interpolate Images</button>
+        </form>
+
+        <!-- Form 3: Explore Latent Space -->
+        <form action="/manipulate" method="post">
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md">Explore Latent Space</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Images</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <div class="max-w-screen-md p-6 bg-white rounded-md shadow-md flex flex-col items-center">
+        <h1 class="text-2xl font-bold mb-4">Generated Images</h1>
+        
+        <!-- Image Display -->
+        <div class="flex flex-wrap justify-center max-w-full">
+            {% for img_str in img_list %}
+                <img src="data:image/png;base64,{{ img_str }}" alt="Generated Image"
+                     class="m-2 rounded-md shadow-md max-w-full">
+            {% endfor %}
+        </div>
+
+        <!-- Back Button to Index.html -->
+        <a href="/" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md">Back to Home</a>
+    </div>
+</body>
+</html>
